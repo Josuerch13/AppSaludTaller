@@ -1,0 +1,339 @@
+<h1>Listado de Usuarios</h1>
+
+  <!-- <div class="col-md-10">
+    <button class="btn btn-primary btn-lg">
+      Buscar
+    </button>
+  </div> -->
+
+  <button class="btn btn-primary btn-lg" (click)="showSearch()">Buscar Usuario</button> <br> <br>
+  <div *ngIf="searchVisible">
+      <label class="form-control-label">Nombre:</label>
+      <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()"> <br>
+      <label class="form-control-label">Apellido:</label>
+      <input class="form-control form-control-alternative" type="text" [(ngModel)]="apellidoPaterno" (keyup)="searchUsersLastName()"> <br>
+  </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Apellido Paterno </th>
+      <th>Apellido Materno </th>
+      <th>Edad </th>
+      <th>Género </th>
+      <th>Estado Civil </th>
+      <th>Situación Laboral </th>
+      <th>Grado Académico </th>
+      <th>Acciones </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.nombres }}</td>
+      <td>{{ user.apellidoPaterno }}</td>
+      <td>{{ user.apellidoMaterno }}</td>
+      <td>{{ user.edad }}</td>
+      <td>{{ user.genero }}</td>
+      <td>{{ user.estadoCivil }}</td>
+      <td>{{ user.situacionLaboral }}</td>
+      <td>{{ user.gradoAcademico }}</td>
+      <td> <button class="btn btn-outline-danger" (click)="deleteUser(user)">Eliminar</button> <br>
+        <button class="btn btn-outline-danger" (click)="showHistory(user)">Historial</button>
+       </td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="deleteUser(user)">Alimentacion</button> <br>
+        <button class="btn btn-outline-danger" (click)="showHistory(user)">Agua</button> <br>
+      </td> <br>
+      <td>
+        <button class="btn btn-outline-danger" (click)="deleteUser(user)">Ejercicio</button> <br>
+        <button class="btn btn-outline-danger" (click)="showHistory(user)">Sol</button> <br>
+      </td> <br>
+      <td>
+        <button class="btn btn-outline-danger" (click)="deleteUser(user)">Descanso</button> <br>
+        <button class="btn btn-outline-danger" (click)="showHistory(user)">Esperanza</button> <br>
+      </td> <br>
+      </table> <br>
+      <!-- <form [formGroup]="form" (ngSubmit)="save(form.value)" > -->
+      <div *ngIf="historyVisible">
+        <h1>Historial Medico</h1> <br>
+        <h2>Antecedentes Familiares</h2>
+        <table>
+          <tr>
+          <th><label class="form-control-label">Cancer:</label>
+            <div *ngIf="inputCancer1">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="cancer"  (keyup)="inputCancer()" placeholder="Describa Por Favor"> <br>
+            </div>
+          </th>
+        <th><mat-slide-toggle (change)="toggleCancer()"></mat-slide-toggle></th><br>
+
+      </tr><br>
+      <tr></tr>
+      <tr>
+          <th><label class="form-control-label">Diabetes:</label>
+            <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div>
+          </th>
+          <th><mat-slide-toggle (change)="toggleDiabetes()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr>
+          <th><label class="form-control-label">Enfermedades Cardiacas:</label>
+            <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+          </tr> <br>
+          <tr> <th><label class="form-control-label">Enfermedades Respiratorias:</label>
+            <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+          <tr><th><label class="form-control-label">Enfermedades Mentales:</label>
+            <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        </table>
+        <h2>Antecedentes Patologicos</h2>
+        <table>
+          <tr>
+          <th><label class="form-control-label">Enfermedades Cardiovasculares:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+        <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+      </tr><br>
+      <tr>
+          <th><label class="form-control-label">Enfermedades Respiratorias:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr>
+          <th><label class="form-control-label">Enfermedades Digestivas:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+          </tr> <br>
+          <tr> <th><label class="form-control-label">Enfermedades Endocrinas:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Enfermedades Musculoesqueléco:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Mentales y emocionales:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades oncológicas:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Infecciosas:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        </table>
+
+        <h2>Antecedentes GinecoObstetricos</h2>
+        <table>
+          <tr>
+          <th><label class="form-control-label">Complicaciones Obstetricas:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+        <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+      </tr><br>
+      <tr>
+        <th><label class="form-control-label">Antecedentes Ginecológicas:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+      <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+    </tr><br>
+    <tr>
+      <th><label class="form-control-label">Antecedentes de anticonceptivos:</label>
+      <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+      </th>
+    <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+  </tr><br>
+  <tr>
+    <th><label class="form-control-label">Violencia sexual:</label>
+    <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+    </th>
+  <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+</tr><br>
+
+
+      </table>
+        <h2>Otras Enfermedades</h2>
+        <table>
+          <tr>
+          <th><label class="form-control-label">Enfermedad Actual:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+        <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+      </tr><br>
+      <tr>
+          <th><label class="form-control-label">SNC:</label>
+            <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle>
+
+          </th>
+        </tr><br>
+        <tr>
+          <th><label class="form-control-label">Enfermedades CardioVascular:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+          </tr> <br>
+          <tr> <th><label class="form-control-label">Enfermedad Respiratoria:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+          <tr><th><label class="form-control-label">Enfermedades Gastrointestinal:</label>
+          <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+          </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Musculo Esqueletesque:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Linfatico:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        <tr><th><label class="form-control-label">Enfermedades Endocrino:</label>
+        <!-- <div *ngIf="inputVisible">
+              <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+            </div> -->
+        </th>
+          <th><mat-slide-toggle (change)="toggle()"></mat-slide-toggle></th>
+        </tr><br>
+        </table>
+        <div class="col-md-10">
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg"
+            [disabled]="form.invalid"
+            (click)="save2()"
+          >
+            Guardar
+          </button>
+
+      </div>
+      </div>
+    <!-- </form> -->
+
+<!--
+      <div *ngIf="historyVisible">
+        <h1>Historial Medico</h1> <br>
+        <h2>Antecedentes Familiares</h2>
+    <form [formGroup]="myForm">
+      <tr>
+        <th><label class="form-control-label">Cancer:</label>
+          <div *ngIf="inputVisible">
+            <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+          </div>
+        </th>
+      <th><mat-slide-toggle formControlName="toggleCancer" (change)="toggleCancer()">Toggle Cancer</mat-slide-toggle></th><br>
+    </tr><br>
+    <tr>
+      <th><label class="form-control-label">Diabetes:</label>
+        <div *ngIf="inputVisible">
+          <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+        </div>
+      </th>
+    <th><mat-slide-toggle formControlName="toggleDiabetes" (change)="toggleDiabetes()">Toggle Diabetes</mat-slide-toggle></th><br>
+  </tr><br>
+  <tr>
+    <th><label class="form-control-label">Enfermedades Cardiacas:</label>
+      <div *ngIf="inputVisible">
+        <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+      </div>
+    </th>
+  <th><mat-slide-toggle formControlName="toggleCardiacas" (change)="toggleCardiacas()">Toggle Cardiacas</mat-slide-toggle></th><br>
+</tr><br>
+<tr>
+  <th><label class="form-control-label">Enfermedades Respiratorias</label>
+    <div *ngIf="inputVisible">
+      <input class="form-control form-control-alternative" type="text" [(ngModel)]="searchTerm"  (keyup)="searchUsersName()" placeholder="Describa Por Favor"> <br>
+    </div>
+  </th>
+<th><mat-slide-toggle formControlName="toggleRespiratorias" (change)="toggleRespiratorias()">Toggle Respiratorias</mat-slide-toggle></th><br>
+
+
+<button
+            type="submit"
+            class="btn btn-primary btn-lg"
+            [disabled]="form.invalid"
+          >
+            Guardar
+          </button>
+    </form>
+    </div> -->
+
+
+<!-- <div *ngIf="isOn">
+  <p>El toggle está encendido.</p>
+</div>
+
+<div *ngIf="!isOn">
+  <p>El toggle está apagado.</p>
+</div> -->
+
+
+

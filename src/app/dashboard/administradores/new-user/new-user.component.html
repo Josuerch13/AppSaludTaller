@@ -1,0 +1,119 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="p-3">
+        <h1>Registro de Usuarios</h1>
+        <h3>Utiliza este Formulario para Registrar Usuarios en la Aplicacion</h3>
+      </div>
+      <div class="card-body border-top">
+          <form [formGroup]="form" (ngSubmit)="save(form.value)" >
+                  <div class="row d-flex justify-content-center  ">
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Nombres: </label>
+                        <input type="text" id="" formControlName="nombres" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Apellido Paterno: </label>
+                        <input type="text" id="" formControlName="apellidoPaterno" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Apellido Materno: </label>
+                        <input type="text" id="" formControlName="apellidoMaterno" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Telefono: </label>
+                        <input type="number" id="" formControlName="telefono" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Edad: </label>
+                        <input type="number" id="" formControlName="edad" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Genero: </label> <br>
+                        <!-- <input type="text" id="" formControlName="genero" class="form-control form-control-alternative"> -->
+
+                        <select class="form-control form-control-alternative" (change)="selectedOptionGenero = $event.target.value" required>
+                          <option value="">Seleccione una opción</option>
+                          <option *ngFor="let option of optionsGenero" [value]="option.value">{{option.label}}</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Estado Civil: </label> <br>
+                        <!-- <input type="text" id="" formControlName="estadoCivil" class="form-control form-control-alternative"> -->
+                        <select class="form-control form-control-alternative" (change)="selectedOptionEstadoCivil = $event.target.value">
+                          <option value="">Seleccione una opción</option>
+                          <option *ngFor="let option of optionsEstadoCivil" [value]="option.value">{{option.label}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Situacion Laboral: </label> <br>
+                        <!-- <input type="text" id="" formControlName="situacionLaboral" class="form-control form-control-alternative"> -->
+                        <select class="form-control form-control-alternative" (change)="selectedOptionSituacionLaboral = $event.target.value">
+                          <option value="">Seleccione una opción</option>
+                          <option *ngFor="let option of optionsSituacionLaboral" [value]="option.value">{{option.label}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Grado Academico: </label> <br>
+                        <!-- <input type="text" id="" formControlName="gradoAcademico" class="form-control form-control-alternative"> -->
+                        <select class="form-control form-control-alternative" (change)="selectedOptionGradoAcademico = $event.target.value">
+                          <option value="">Seleccione una opción</option>
+                          <option *ngFor="let option of optionsGradoAcademico" [value]="option.value">{{option.label}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Fecha de Nacimiento: </label>
+                        <input type="date" id="" formControlName="fechaNacimiento" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Usuario: </label>
+                        <input type="text" id="" formControlName="usuario" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">Contraseña: </label>
+                        <input type="text" id="" formControlName="contrasenia" class="form-control form-control-alternative" required>
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-lg"
+                        [disabled]="form.invalid"
+                      >
+                        Guardar
+                      </button>
+                  </div>
+                  </div>
+                <ng-template #message>
+                </ng-template>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

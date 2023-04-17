@@ -1,7 +1,7 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
- 
+
   {
     path: '/dashboard',
     title: 'Dashboard',
@@ -10,6 +10,24 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+
+  {
+    path: '/dashboard/administradores/new-user',
+    title: 'Registrar Usuario',
+    icon: 'bi bi-bicycle',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/dashboard/administradores/user-list',
+    title: 'Lista de Usuarios',
+    icon: 'bi bi-bicycle',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
   // {
   //   path: '/dashboard/remedios/alimentacion',
   //   title: 'Alimentación',
