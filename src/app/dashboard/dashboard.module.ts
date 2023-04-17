@@ -25,6 +25,12 @@ const routes: Routes = [
   //   path: 'remedios',
   //   loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
   // }
+
+    {
+    path: 'administradores',
+    loadChildren: () => import('./administradores/administradores.module').then(m => m.AdministradoresModule)
+  }
+
 ];
 
 @NgModule({
