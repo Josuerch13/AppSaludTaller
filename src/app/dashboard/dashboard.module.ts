@@ -21,10 +21,10 @@ const routes: Routes = [
   //   },
   //   component: DashboardComponent,
   // },
-  // {
-  //   path: 'remedios',
-  //   loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
-  // }
+  {
+    path: 'remedios',
+    loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
+  }
 ];
 
 @NgModule({
