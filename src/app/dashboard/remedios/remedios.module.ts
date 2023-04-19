@@ -14,11 +14,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { WebMaterialModule } from '../../webmaterial.module';
 
 import { EsperanzaComponent } from './esperanza/esperanza.component';
-
+import { AlimentacionComponent } from './alimentacion/alimentacion.component';
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
-    EsperanzaComponent
+    EsperanzaComponent,
+    AlimentacionComponent
+
   ],
   imports: [
     CommonModule,
