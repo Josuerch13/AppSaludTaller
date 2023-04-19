@@ -11,10 +11,14 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { WebMaterialModule } from '../../webmaterial.module';
 import { DescansoComponent } from './descanso/descanso.component';
+import { LuzSolarComponent } from './luz-solar/luz-solar.component';
+import { CronometroComponent } from './cronometro/cronometro.component';
 
 @NgModule({
     declarations: [
         ConfiguracionComponent,
+        LuzSolarComponent,
+        CronometroComponent,
         DescansoComponent
     ],
     imports: [

@@ -13,14 +13,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 
 const routes: Routes = [
-  // {
-  //   path: "",
-  //   data: {
-  //     title: "Dashboard",
-  //     urls: [{ title: "Dashboard", url: "/dashboard" }, { title: "Dashboard" }],
-  //   },
-  //   component: DashboardComponent,
-  // },
+
   {
     path: 'remedios',
     loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
