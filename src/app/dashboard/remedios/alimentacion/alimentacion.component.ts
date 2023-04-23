@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AlimentacionComponent implements OnInit {
   reservas: any[] = [];
+  nombre:any[]=[];
   alimentacion!: any;
   form!: FormGroup;
   time = new Date();
@@ -26,6 +27,7 @@ export class AlimentacionComponent implements OnInit {
     private dataPipe: DatePipe
   ) { }
   forms: FormGroup = this.fb.group({
+    nombre:[''],
     fecha: [''], // Agrega los nombres de los campos de tu formulario aquí
     hora: [''],
     saludable: ['']
