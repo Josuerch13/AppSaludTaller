@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 
-import { RemediosRoutingModule } from './remedios-routing.module';
+import { RemediosRoutingModule } from './remedios.routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
