@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DescansoComponent } from './descanso/descanso.component';
 import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
 import { AlimentacionComponent } from './alimentacion/alimentacion.component';
@@ -14,10 +15,12 @@ const routes: Routes = [
 
   },
   {
+    path:'descanso',
+    component: DescansoComponent
+  },
   path:'alimentacion',
   component: AlimentacionComponent
-
-},
+}
 ];
 
 @NgModule({

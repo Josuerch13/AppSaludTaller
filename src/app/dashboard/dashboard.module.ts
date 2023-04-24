@@ -13,6 +13,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 
 
+const routes: Routes = [
   {
     path: "",
     data: {
@@ -25,8 +26,6 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
     path: 'remedios',
     loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
   }
-
-
 ];
 
 @NgModule({
