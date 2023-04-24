@@ -23,10 +23,10 @@ const routes: Routes = [
     path:'luz-solar',
     component: LuzSolarComponent
   },
-=======
+  {
   path:'alimentacion',
   component: AlimentacionComponent
-}
+  }
 ];
 
 @NgModule({
