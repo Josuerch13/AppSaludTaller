@@ -15,16 +15,20 @@ import { WebMaterialModule } from '../../webmaterial.module';
 import { DescansoComponent } from './descanso/descanso.component';
 import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
+import { LuzSolarComponent } from './luz-solar/luz-solar.component';
+import { CronometroComponent } from './cronometro/cronometro.component';
+
 import { AlimentacionComponent } from './alimentacion/alimentacion.component';
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
     DescansoComponent,
+    CronometroComponent,
+    LuzSolarComponent,
     EsperanzaComponent,
     AlimentacionComponent,
     AguaComponent,
     EsperanzaComponent
-
   ],
   imports: [
     CommonModule,

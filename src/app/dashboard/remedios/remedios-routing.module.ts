@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DescansoComponent } from './descanso/descanso.component';
 import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
-import { AlimentacionComponent } from './alimentacion/alimentacion.component';
+import { LuzSolarComponent } from './luz-solar/luz-solar.component';
+import { AlimentacionComponent } from './alimentacion/alimentacion.component'
 const routes: Routes = [
   {
     path:'agua',
@@ -18,6 +19,11 @@ const routes: Routes = [
     path:'descanso',
     component: DescansoComponent
   },
+  {
+    path:'luz-solar',
+    component: LuzSolarComponent
+  },
+=======
   path:'alimentacion',
   component: AlimentacionComponent
 }
