@@ -27,7 +27,7 @@
           <form [formGroup]="form" (ngSubmit)="save(form.value)" >
               <mat-card *ngIf="nutricion?.nutricion_id!=null">
                 <mat-card-content *ngIf="nutricion?.hora_inicio>=hora ||nutricion?.hora_fin>=hora; else message" >
-                
+
                   <div class="row d-flex justify-content-center  ">
 
                     <div class="col-md-10 col-lg-10 mb-3">
@@ -78,7 +78,7 @@
 
                 <ng-template #message>
                   <mat-card-content>
-                      <h5>Ya Paso la hora de: {{nutricion?.nombre}}</h5>
+                      <h5>Ya Paso la hora de:</h5>
                   </mat-card-content>
                 </ng-template>
 
@@ -88,7 +88,7 @@
                 <thead>
                   <tr>
                     <h4 class="card-title mb-0 text-uppercase "style="text-align: center;">ALIMENTACION: {{nutricion?.nombre}}</h4>
-                    <th>Nombre TIPO DE ALIMENTACION</th>
+
                     <th>FECHA</th>
                     <th>HORA</th>
                     <th>SALUDABLE</th>
