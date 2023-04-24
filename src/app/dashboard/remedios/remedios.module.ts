@@ -13,13 +13,18 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { WebMaterialModule } from '../../webmaterial.module';
 import { DescansoComponent } from './descanso/descanso.component';
+import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
-
+import { AlimentacionComponent } from './alimentacion/alimentacion.component';
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
     DescansoComponent,
+    EsperanzaComponent,
+    AlimentacionComponent,
+    AguaComponent,
     EsperanzaComponent
+
   ],
   imports: [
     CommonModule,
