@@ -14,11 +14,15 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { WebMaterialModule } from '../../webmaterial.module';
 import { DescansoComponent } from './descanso/descanso.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
+import { LuzSolarComponent } from './luz-solar/luz-solar.component';
+import { CronometroComponent } from './cronometro/cronometro.component';
 
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
     DescansoComponent,
+    CronometroComponent,
+    LuzSolarComponent,
     EsperanzaComponent
   ],
   imports: [
