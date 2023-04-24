@@ -12,12 +12,13 @@ import {MatRadioModule} from '@angular/material/radio';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { WebMaterialModule } from '../../webmaterial.module';
-
+import { DescansoComponent } from './descanso/descanso.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
 
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
+    DescansoComponent,
     EsperanzaComponent
   ],
   imports: [

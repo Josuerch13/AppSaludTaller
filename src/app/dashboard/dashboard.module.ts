@@ -21,15 +21,15 @@ const routes: Routes = [
   //   },
   //   component: DashboardComponent,
   // },
-  // {
-  //   path: 'remedios',
-  //   loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
-  // }
-
-    {
-    path: 'administradores',
-    loadChildren: () => import('./administradores/administradores.module').then(m => m.AdministradoresModule)
+  {
+    path: 'remedios',
+    loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
   }
+
+  //  {
+  //   path: 'administradores',
+  //   loadChildren: () => import('./administradores/administradores.module').then(m => m.AdministradoresModule)
+  // }
 
 ];
 

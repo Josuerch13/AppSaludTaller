@@ -60,14 +60,14 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  // {
-  //   path: '/dashboard/remedios/descanso',
-  //   title: 'Descanso',
-  //   icon: 'bi bi-moon-stars-fill',
-  //   class: '',
-  //   extralink: false,
-  //   submenu: []
-  // },
+  {
+    path: '/dashboard/remedios/descanso',
+    title: 'Descanso',
+    icon: 'bi bi-moon-stars-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '/dashboard/remedios/esperanza',
   //   title: 'Esperanza',
