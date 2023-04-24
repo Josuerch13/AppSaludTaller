@@ -12,25 +12,20 @@ import { BlogCardsComponent } from "./dashboard-components/blog-cards/blog-cards
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 
+
 const routes: Routes = [
-  // {
-  //   path: "",
-  //   data: {
-  //     title: "Dashboard",
-  //     urls: [{ title: "Dashboard", url: "/dashboard" }, { title: "Dashboard" }],
-  //   },
-  //   component: DashboardComponent,
-  // },
+  {
+    path: "",
+    data: {
+      title: "Dashboard",
+      urls: [{ title: "Dashboard", url: "/dashboard" }, { title: "Dashboard" }],
+    },
+    component: DashboardComponent,
+  },
   {
     path: 'remedios',
     loadChildren: () => import('./remedios/remedios.module').then(m => m.RemediosModule)
   }
-
-  //  {
-  //   path: 'administradores',
-  //   loadChildren: () => import('./administradores/administradores.module').then(m => m.AdministradoresModule)
-  // }
-
 ];
 
 @NgModule({
