@@ -36,14 +36,14 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  // {
-  //   path: '/dashboard/remedios/agua',
-  //   title: 'Agua',
-  //   icon: 'bi bi-droplet',
-  //   class: '',
-  //   extralink: false,
-  //   submenu: []
-  // },
+  {
+    path: '/dashboard/remedios/agua',
+    title: 'Agua',
+    icon: 'bi bi-droplet',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '/dashboard/remedios/ejercicio',
   //   title: 'Ejercicio',
@@ -68,12 +68,12 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  // {
-  //   path: '/dashboard/remedios/esperanza',
-  //   title: 'Esperanza',
-  //   icon: 'bi bi-heart-pulse',
-  //   class: '',
-  //   extralink: false,
-  //   submenu: []
-  // },
+  {
+    path: '/dashboard/remedios/esperanza',
+    title: 'Esperanza',
+    icon: 'bi bi-heart-pulse',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
 ];
