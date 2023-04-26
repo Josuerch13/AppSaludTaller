@@ -2,31 +2,31 @@ import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
 
-  {
-    path: '/dashboard',
-    title: 'Dashboard',
-    icon: 'bi bi-speedometer2',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
+  // {
+  //   path: '/dashboard',
+  //   title: 'Dashboard',
+  //   icon: 'bi bi-speedometer2',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
 
-  {
-    path: '/dashboard/administradores/new-user',
-    title: 'Registrar Usuario',
-    icon: 'bi bi-bicycle',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
-    path: '/dashboard/administradores/user-list',
-    title: 'Lista de Usuarios',
-    icon: 'bi bi-bicycle',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
+  // {
+  //   path: '/dashboard/administradores/new-user',
+  //   title: 'Registrar Usuario',
+  //   icon: 'bi bi-bicycle',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
+  // {
+  //   path: '/dashboard/administradores/user-list',
+  //   title: 'Lista de Usuarios',
+  //   icon: 'bi bi-bicycle',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
   {
     path: '/dashboard/remedios/alimentacion',
     title: 'Alimentación',
@@ -44,14 +44,14 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  {
-    path: '/dashboard/remedios/agua',
-    title: 'Agua',
-    icon: 'bi bi-droplet',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
+  // {
+  //   path: '/dashboard/remedios/agua',
+  //   title: 'Agua',
+  //   icon: 'bi bi-droplet',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
   // {
   //   path: '/dashboard/remedios/ejercicio',
   //   title: 'Ejercicio',
@@ -76,12 +76,12 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  {
-    path: '/dashboard/remedios/esperanza',
-    title: 'Esperanza',
-    icon: 'bi bi-heart-pulse',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
+  // {
+  //   path: '/dashboard/remedios/esperanza',
+  //   title: 'Esperanza',
+  //   icon: 'bi bi-heart-pulse',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
 ];

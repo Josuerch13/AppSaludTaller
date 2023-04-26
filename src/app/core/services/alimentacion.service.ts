@@ -12,18 +12,18 @@ export class AlimentacionService {
 
   alimentacion: any[]=[];
 
-  constructor(private store: AngularFirestore,private  firestore: Firestore, 
+  constructor(private store: AngularFirestore,private  firestore: Firestore,
     private tokenStorage:TokenStorageService
     ) { }
 
   getAll(): Observable<any>{
     this.alimentacion.splice(0,5);
     this.store.firestore.collection('alimentacion').orderBy('nutricion_id').onSnapshot({includeMetadataChanges:true},(snapshot)=>{
-      snapshot.docChanges().forEach((change)=>{   
-        if(change.type ==="added"){          
-            this.alimentacion.push(change.doc.data());                        
+      snapshot.docChanges().forEach((change)=>{
+        if(change.type ==="added"){
+            this.alimentacion.push(change.doc.data());
         }
-        
+
       })
       let source = snapshot.metadata.fromCache ? "local cache" : "firebase server";
     })
@@ -36,12 +36,12 @@ export class AlimentacionService {
         nutricion_id: data['nutricion_id'],
         saludable:data['saludable'],
         fecha:data['fecha'],
-        hora:data['hora'] 
-      }     
+        hora:data['hora']
+      }
 
       return of(this.store.collection('h_alimentacion').add(ref))
     }
-  
-    
+
+
 
 }

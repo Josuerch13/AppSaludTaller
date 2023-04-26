@@ -19,14 +19,14 @@ export class AlimentacionComponent implements OnInit {
   nutricion!: any;
   hora:any;
 
+
   constructor(private fb: FormBuilder,
-
-
     private alimentacionService: AlimentacionService,
     private formBuilder: FormBuilder,
     private dataPipe: DatePipe
   ) { }
   forms: FormGroup = this.fb.group({
+    descripcion: [''],
     nombre:[''],
     fecha: [''], // Agrega los nombres de los campos de tu formulario aquí
     hora: [''],
@@ -43,8 +43,10 @@ export class AlimentacionComponent implements OnInit {
   }
 
   create() {
+
     this.form = this.formBuilder.group({
       nutricion_id:[''],
+
       saludable:['', Validators.required],
       fecha:[this.dataPipe.transform(Date.now(),'yyyy-MM-dd')],
       hora:[this.dataPipe.transform(Date.now(),'HH:mm:ss')],
