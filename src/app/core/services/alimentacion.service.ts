@@ -34,6 +34,8 @@ export class AlimentacionService {
       let ref={
         user_id: this.tokenStorage.getId(),
         nutricion_id: data['nutricion_id'],
+        nombre: data['nombre'],
+        descripcion: data['descripcion'],
         saludable:data['saludable'],
         fecha:data['fecha'],
         hora:data['hora']

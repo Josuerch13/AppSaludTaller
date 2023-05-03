@@ -1,14 +1,15 @@
 <div class="row">
-  <div class="col-md-6 col-lg-3" *ngFor='let topcard of alimentacion'>
-     <a (click)="eventClick(topcard)">
+  <div class="col-md-6 col-lg-3" *ngFor='let nutricion of alimentacion'>
+     <a (click)="eventClick(nutricion)">
       <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center">
                 <div class="btn btn-lg rounded-circle round round-lg fs-6 d-flex align-items-center justify-content-center bg-light-info">
-                    <img src="../../../../assets/images/alimentacion/{{topcard.icon}}" width="50px" alt="">
+                    <img src="../../../../assets/images/alimentacion/{{nutricion.icon}}" width="50px" alt="">
                 </div>
                 <div class="ms-3">
-                    <h3 class="mb-0 font-weight-bold">{{topcard.nombre}}</h3>
+                    <h3 class="mb-0 font-weight-bold">{{nutricion.nombre}}</h3>
+
                 </div>
             </div>
         </div>
@@ -35,6 +36,19 @@
                       </div>
 
                     </div>
+                    <div class="form-group">
+                      <label class="form-control-label">Alimentación</label>
+                      <select formControlName="nombre" class="form-control">
+                        <option *ngFor="let nutricion of alimentacion" >{{ nutricion?.nombre }}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-10 col-lg-10 mb-3">
+                      <div class="form-group">
+                        <label class="form-control-label">DESCRIPCION</label>
+                        <input type="text" formControlName="descripcion" class="form-control form-control-alternative">
+                      </div>
+
+                    </div>
                     <div class="col-md-10 col-lg-10 mb-3">
                       <div class="form-group">
                         <label class="form-control-label">FECHA ACTUAL</label>
@@ -49,6 +63,7 @@
                       </div>
 
                     </div>
+
                     <div class="col-md-10 col-lg-10 mb-3">
                       <div class="form-group ">
                         <label class="form-control-label" for="input-username">SALUDABLE</label>
@@ -92,9 +107,10 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <h4 class="card-title mb-0 text-uppercase "style="text-align: center;">ALIMENTACION: {{nutricion?.nombre}}</h4>
-                   <!-- agregar descripcion -->
 
+                   <!-- agregar descripcion -->
+                   <th>ALIMENTACION</th>
+                   <th>DESCRIPCION</th>
                     <th>FECHA</th>
                     <th>HORA</th>
                     <th>SALUDABLE</th>
@@ -106,7 +122,7 @@
                   <tr *ngFor="let reserva of reservas">
 
                     <td>{{ reserva.nombre }}</td>
-
+                    <td>{{reserva.descripcion}}</td>
                     <td>{{ reserva.fecha }}</td>
                     <td>{{ reserva.hora }}</td>
                     <td>{{ reserva.saludable ? 'SI' : 'NO' }}</td>

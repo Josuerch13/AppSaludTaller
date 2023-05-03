@@ -17,6 +17,7 @@ export class AlimentacionComponent implements OnInit {
   form!: FormGroup;
   time = new Date();
   nutricion!: any;
+
   hora:any;
 
 
@@ -31,6 +32,7 @@ export class AlimentacionComponent implements OnInit {
     fecha: [''], // Agrega los nombres de los campos de tu formulario aquí
     hora: [''],
     saludable: ['']
+
   });
 
   ngOnInit(): void {
@@ -46,7 +48,8 @@ export class AlimentacionComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       nutricion_id:[''],
-
+      nombre:['', Validators.required],
+      descripcion:['', Validators.required],
       saludable:['', Validators.required],
       fecha:[this.dataPipe.transform(Date.now(),'yyyy-MM-dd')],
       hora:[this.dataPipe.transform(Date.now(),'HH:mm:ss')],
