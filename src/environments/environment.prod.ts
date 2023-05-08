@@ -1,11 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'appsaluduab2',
-    appId: '1:564102367220:web:8ca2cb94179edd11c95ba1',
-    storageBucket: 'appsaluduab2.appspot.com',
-    apiKey: 'AIzaSyBFDFNDa51YIGnVopCl8wnQvsmjk_TedNw',
-    authDomain: 'appsaluduab2.firebaseapp.com',
-    messagingSenderId: '564102367220',
+    projectId: 'appsaludtaller',
+    appId: '1:994073933395:web:e6a893a03c5bb6d717f8a6',
+    storageBucket: 'appsaludtaller.appspot.com',
+    apiKey: 'AIzaSyB1ajttgysefS0TWiXabRsEFj1xENVatwQ',
+    authDomain: 'appsaludtaller.firebaseapp.com',
+    messagingSenderId: '994073933395',
   },
   production: true
 };

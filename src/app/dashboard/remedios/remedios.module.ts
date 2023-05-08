@@ -10,11 +10,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import { CronometroComponent } from './cronometro/cronometro.component';
 import { WebMaterialModule } from '../../webmaterial.module';
 import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
 import { AlimentacionComponent } from './alimentacion/alimentacion.component';
+import { EjercicioComponent } from './ejercicio/ejercicio.component';
+import { TipoEjerciciosComponent } from './tipo-ejercicios/tipo-ejercicios.component';
 // import{} from'@angular/flex-layout'
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { AlimentacionComponent } from './alimentacion/alimentacion.component';
     EsperanzaComponent,
     AlimentacionComponent,
     AguaComponent,
-    EsperanzaComponent
-
+    EsperanzaComponent,
+    CronometroComponent,
+    TipoEjerciciosComponent,
+    EjercicioComponent
   ],
   imports: [
     CommonModule,

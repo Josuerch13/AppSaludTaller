@@ -52,14 +52,14 @@ export const ROUTES: RouteInfo[] = [
   //   extralink: false,
   //   submenu: []
   // },
-  // {
-  //   path: '/dashboard/remedios/ejercicio',
-  //   title: 'Ejercicio',
-  //   icon: 'bi bi-bicycle',
-  //   class: '',
-  //   extralink: false,
-  //   submenu: []
-  // },
+  {
+    path: '/dashboard/remedios/ejercicio',
+     title: 'Ejercicio',
+   icon: 'bi bi-bicycle',
+    class: '',
+     extralink: false,
+     submenu: []
+ },
   // {
   //   path: '/dashboard/remedios/luz-solar',
   //   title: 'Luz Solar',
