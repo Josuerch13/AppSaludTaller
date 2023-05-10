@@ -16,7 +16,7 @@ import { DescansoComponent } from './descanso/descanso.component';
 import { AguaComponent } from './agua/agua.component';
 import { EsperanzaComponent } from './esperanza/esperanza.component';
 import { LuzSolarComponent } from './luz-solar/luz-solar.component';
-import { CronometroComponent } from './cronometro/cronometro.component';
+
 
 import { AlimentacionComponent } from './alimentacion/alimentacion.component';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
@@ -30,14 +30,9 @@ import { TipoEjerciciosComponent } from './tipo-ejercicios/tipo-ejercicios.compo
     EsperanzaComponent,
     AlimentacionComponent,
     AguaComponent,
-
-    EsperanzaComponent,
-    CronometroComponent,
     TipoEjerciciosComponent,
     EjercicioComponent
 
-    EsperanzaComponent
- main
   ],
   imports: [
     CommonModule,
